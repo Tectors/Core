@@ -13,8 +13,8 @@ public abstract class NativeLibraryLoader
     {
         Directory.CreateDirectory(RuntimeFolder.ToString());
 
-        var oodlePath = Path.Combine(RuntimeFolder.FullName, OodleHelper.OODLE_DLL_NAME);
-        if (!File.Exists(oodlePath)) await OodleHelper.DownloadOodleDllAsync(oodlePath);
+        var oodlePath = Path.Combine(RuntimeFolder.FullName, OodleHelper.OodleFileName);
+        if (!File.Exists(oodlePath)) await OodleHelper.DownloadOodleDllAsync(ref oodlePath);
         OodleHelper.Initialize(oodlePath);
         
         var zlibPath = Path.Combine(RuntimeFolder.FullName, ZlibHelper.DLL_NAME);

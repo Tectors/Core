@@ -127,8 +127,8 @@
       <SolidColorBrush x:Key="AccentBackground" Color="#005c6e"/>
       <SolidColorBrush x:Key="NavigationViewSelectionIndicatorForeground" Color="#00d5ff"/>
 
-      <x:Double x:Key="TitleBarHeight">63</x:Double>
-      <Thickness x:Key="TitleBarNegativeTopMargin">0 -63 0 0</Thickness>
+      <x:Double x:Key="TitleBarHeight">70</x:Double>
+      <Thickness x:Key="TitleBarNegativeTopMargin">0 -70 0 0</Thickness>
       
       <x:Double x:Key="ListViewItemDisabledThemeOpacity">0.425</x:Double>
       
