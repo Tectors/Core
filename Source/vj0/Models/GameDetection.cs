@@ -56,7 +56,7 @@ public static class GameDetection
                 continue;
             }
             
-            _ = profile.Save();
+            _ = profile.Save(false);
             LoadedProfiles.Add(profile);
 
             onDetected?.Invoke(profile);

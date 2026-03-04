@@ -33,7 +33,7 @@
                    Width="22"
                    IsVisible="{Binding ShowIcon, RelativeSource={RelativeSource AncestorType={x:Type controls:BaseTitleBar}}}"
                    HorizontalAlignment="Center"
-                   Margin="22 0 10 0"
+                   Margin="25 0 10 0"
                    VerticalAlignment="Center"
                    IsHitTestVisible="False"/>
             

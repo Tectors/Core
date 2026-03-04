@@ -97,7 +97,7 @@ public partial class MainWindowModel : WindowModelBase
         
         NavigateToStatus(AppStatus.Idle);
         
-        _ = ProfileSelectionVM.RefreshAllAsync();
+        DispatcherTimer.RunOnce(() => ProfileSelectionVM.RefreshAllAsync(), TimeSpan.FromSeconds(1.0));
     }
 
     /* ~~~ Profile Handling ~~~ */

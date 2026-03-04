@@ -21,8 +21,8 @@
                             BorderThickness="1"
                             VerticalAlignment="Center"
                             CornerRadius="5">
-                        <TextBlock FontFamily="Consolas"
-                                   FontWeight="Bold"
+                        <TextBlock
+                                   FontWeight="Light"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Text="{Binding}" />

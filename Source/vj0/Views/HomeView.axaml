@@ -38,10 +38,8 @@
                     <StackPanel Grid.Row="1" HorizontalAlignment="Center" Spacing="30" Margin="0 0 0 0">
                         <!-- App icon -->
                         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Height="200" HorizontalAlignment="Center" PointerEntered="InputElement_OnPointerEntered"
-                                   Source="/Assets/Icon/App.Icon.png" Margin="0 0 0 -0"/>
-                            <Image Height="200" HorizontalAlignment="Center" PointerEntered="InputElement_OnPointerEntered" Name="Logo"
-                                   Source="/Assets/Icon/App.Icon.png" Margin="0 0 0 -0">
+                            <Image Height="200" HorizontalAlignment="Center" PointerEntered="InputElement_OnPointerEntered" Source="/Assets/Icon/App.Icon.png" Margin="0 0 0 25"/>
+                            <Image Height="200" HorizontalAlignment="Center" Opacity="0" Name="Logo" Source="/Assets/Icon/App.Icon.png" Margin="0 -120 0 0">
                                 <Image.RenderTransform>
                                     <ScaleTransform ScaleX="1" ScaleY="1"/>
                                 </Image.RenderTransform>
@@ -55,7 +53,7 @@
                             
                             <TextBlock x:Name="RotatingTaglineText"
                                        Foreground="{DynamicResource AnimatingTextBrush}"
-                                       FontSize="25"
+                                       FontSize="26"
                                        HorizontalAlignment="Center"
                                        
                                        properties:GradientAnimationService.IsAnimated="True"
@@ -64,7 +62,6 @@
                                        properties:GradientAnimationService.AnimationDuration="0.5"
                                        
                                        VerticalAlignment="Center"
-                                       Text="the ultimate datamining experience"
                                        Opacity="0"
                                        TextAlignment="Center"/>
                         </Border>
@@ -99,7 +96,7 @@
                                                 </Viewbox.Effect>
                                             </Viewbox>
                                             
-                                            <Viewbox Width="22" Name="HeartScale" Height="22" Stretch="Uniform" ZIndex="1" IsHitTestVisible="False">
+                                            <Viewbox Width="22" Name="HeartScale" Opacity="0" Margin="0 -20 0 0" Height="22" Stretch="Uniform" ZIndex="1" IsHitTestVisible="False">
                                                 <Viewbox.RenderTransform>
                                                     <ScaleTransform ScaleX="1" ScaleY="1"/>
                                                 </Viewbox.RenderTransform>
@@ -197,15 +194,11 @@
         
         <Border Margin="0 0 12 0" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Right" BorderThickness="1 0 0 1" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="0 0 0 25" VerticalAlignment="Top" Width="120" Height="40"/>
         <Border Margin="0 0 0 12" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Center" BorderThickness="1 1 1 0" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="25 25 0 0" VerticalAlignment="Bottom" Width="450" Height="40"/>
-        <StackPanel ClipToBounds="False" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 20" Opacity="0.7">
+        <StackPanel ClipToBounds="False" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 20">
             <StackPanel x:Name="TipContainer" Orientation="Horizontal" Spacing="5">
-                <avalonia:MaterialIcon Kind="Lightbulb"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Tip: " HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="TipText" Text="" HorizontalAlignment="Center"/>
-                </StackPanel>
+                <avalonia:MaterialIcon Kind="Bulb"  Opacity="0.7"/>
+                <TextBlock x:Name="TipText" Text="" HorizontalAlignment="Center" Opacity="0.8"/>
             </StackPanel>
         </StackPanel>
-        
     </Grid>
 </UserControl>

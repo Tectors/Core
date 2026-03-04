@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
@@ -16,9 +17,18 @@ public static class SyncToFModel
 
     private static JsonNode? Node;
     public static List<Profile> LoadedProfiles = [];
+    
+    private static DateTime _lastLoadTime = DateTime.MinValue;
 
     private static async Task Load()
     {
+        if ((DateTime.UtcNow - _lastLoadTime).TotalSeconds < 1)
+        {
+            return;
+        }
+
+        _lastLoadTime = DateTime.UtcNow;
+        
         if (!File.Exists(AppSettingsPath))
         {
             return;

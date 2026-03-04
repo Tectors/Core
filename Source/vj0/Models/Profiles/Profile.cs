@@ -441,7 +441,7 @@ public class Profile : BaseProfileDisplay
     }
     
     /* File IO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    public async Task Save()
+    public async Task Save(bool bSyncToFModel = true)
     {
         if (Globals.RedactProfiles)
 #pragma warning disable CS0162 // Unreachable code detected
@@ -467,7 +467,7 @@ public class Profile : BaseProfileDisplay
         var json = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
         await File.WriteAllTextAsync(Path.Combine(ProfilesFolder.ToString(), FileName), json);
 
-        if (Settings.Application.SyncFModel)
+        if (Settings.Application.SyncFModel && bSyncToFModel)
         {
             _ = SyncToFModel.Save();
         }

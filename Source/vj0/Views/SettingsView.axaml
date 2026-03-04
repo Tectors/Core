@@ -84,9 +84,9 @@
                     </controls:NavigationViewItem.IconSource>
                 </controls:NavigationViewItem>
                 
-                <controls:NavigationViewItemHeader Content="Dev Tools" IsVisible="{x:Static vj0.Core:Globals.IS_DEBUG}"/>
+                <controls:NavigationViewItemHeader Content="Dev Tools"/>
                 
-                <controls:NavigationViewItem Content="Debug" Tag="{x:Type views:DebugSettingsView}" IsVisible="{x:Static vj0.Core:Globals.IS_DEBUG}">
+                <controls:NavigationViewItem Content="Debug" Tag="{x:Type views:DebugSettingsView}">
                     <controls:NavigationViewItem.IconSource>
                         <fluent:FluentIconSource Icon="Beaker" IconSize="Size32" IconVariant="Regular"/>
                     </controls:NavigationViewItem.IconSource>

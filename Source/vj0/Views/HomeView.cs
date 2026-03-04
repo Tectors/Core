@@ -1,10 +1,11 @@
+using System;
 using System.Threading.Tasks;
 
 using Avalonia.Animation.Easings;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
-
+using Avalonia.Threading;
 using vj0.Framework.Models;
 using vj0.Services;
 using vj0.ViewModels;
@@ -20,6 +21,8 @@ public partial class HomeView : ViewBase<HomeViewModel>
         
         ViewModel.StartRotation(ViewModel.TagLines, 2700, RotatingTaglineText, useRandom: true);
         ViewModel.StartRotation(ViewModel.Tips, 8000, TipText, TipContainer, true);
+        
+        DispatcherTimer.RunOnce(() => PlayLogoAnimation(), TimeSpan.FromSeconds(2.4));
     }
 
     private void OpenDiscord(object? sender, RoutedEventArgs e)
@@ -68,6 +71,8 @@ public partial class HomeView : ViewBase<HomeViewModel>
         const double endScale = 20.0;
         const double durationMs = 800;
         const int stepMs = 6;
+        
+        HeartScale.Opacity = 1.0;
 
         var startOpacity = HeartScale.Opacity;
         const double endOpacity = 0.0;
@@ -96,7 +101,7 @@ public partial class HomeView : ViewBase<HomeViewModel>
         heartTransform.ScaleX = 1.0;
         heartTransform.ScaleY = 1.0;
         
-        HeartScale.Opacity = 1.0;
+        HeartScale.Opacity = 0.0;
         
         IsHeartAnimationPlaying = false;
     }
@@ -120,7 +125,9 @@ public partial class HomeView : ViewBase<HomeViewModel>
         const double startScale = 1.0;
         const double endScale = 3.5;
         const double durationMs = 30;
-        const int stepMs = 2;
+        const int stepMs = 1;
+
+        Logo.Opacity = 1.0;
 
         var startOpacity = Logo.Opacity;
         const double endOpacity = 0.0;
@@ -149,7 +156,7 @@ public partial class HomeView : ViewBase<HomeViewModel>
         Transform.ScaleX = 1.0;
         Transform.ScaleY = 1.0;
         
-        Logo.Opacity = 1.0;
+        Logo.Opacity = 0.0;
         
         IsLogoAnimationPlaying = false;
     }

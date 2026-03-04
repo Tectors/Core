@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:avalonia="clr-namespace:FluentIcons.Avalonia;assembly=FluentIcons.Avalonia"
     xmlns:settings="clr-namespace:vj0.ViewModels.Settings"
+    xmlns:core="clr-namespace:vj0.Core;assembly=vj0.Core"
 
     x:Class="vj0.Views.Settings.DebugSettingsView"
     x:DataType="settings:DebugSettingsViewModel"
@@ -18,9 +19,9 @@
             
         <ScrollViewer Classes="SettingsScrollViewer">
             <StackPanel Classes="SettingsStackPanel">
-                <TextBlock Classes="SettingsCategory" Text="Q1"/>
+                <TextBlock Classes="SettingsCategory" Text="Q1" IsVisible="{x:Static core:Globals.IS_DEBUG}"/>
                 
-                <Button Height="66" Click="OpenGallery" Classes="SettingsExpander HoverLift">
+                <Button Height="66" Click="OpenGallery" Classes="SettingsExpander HoverLift" IsVisible="{x:Static core:Globals.IS_DEBUG}">
                     <StackPanel Orientation="Horizontal" Spacing="2" Margin="12 0" HorizontalAlignment="Left">
                         <avalonia:FluentIcon
                             Icon="PanelRightGallery"
@@ -44,7 +45,7 @@
                     </StackPanel>
                 </Button>
                 
-                <Button Height="66" Click="OpenStartup" Classes="SettingsExpander HoverLift">
+                <Button Height="66" Click="OpenStartup" Classes="SettingsExpander HoverLift" IsVisible="{x:Static core:Globals.IS_DEBUG}">
                     <StackPanel Orientation="Horizontal" Spacing="2" Margin="12 0" HorizontalAlignment="Left">
                         <avalonia:FluentIcon
                             Icon="Open"
