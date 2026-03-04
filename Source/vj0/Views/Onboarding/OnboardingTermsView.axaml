@@ -26,12 +26,12 @@
                 Key Terms
             </TextBlock>
         
-            <controls:NavigationView Width="1000" Height="280" x:Name="NavigationView" Classes="NoBackground" Background="Transparent" PaneDisplayMode="Left" OpenPaneLength="350" IsPaneToggleButtonVisible="False">
+            <controls:NavigationView Width="1100" Height="280" x:Name="NavigationView" Classes="NoBackground" Background="Transparent" PaneDisplayMode="Left" OpenPaneLength="350" IsPaneToggleButtonVisible="False">
                 <controls:NavigationView.MenuItems>
                     <controls:NavigationViewItem Content="Profiles?" Tag="{x:Type OnboardingGuide:OnboardingTermsProfilesView}" IsSelected="True">
                         <controls:NavigationViewItem.IconSource>
                             <fluent:FluentIconSource
-                                Icon="Agents"
+                                Icon="Person"
                                 IconSize="Size32"
                                 IconVariant="Regular"/>
                         </controls:NavigationViewItem.IconSource>
@@ -77,31 +77,22 @@
             </controls:NavigationView>
         
             <Button
-                x:Name="ContinueButton"
-                Classes="BlueShine"
-                Height="40"
+                Classes="ContentSecondary HoverLift"
+                Height="60"
+                Margin="0 50 0 0"
+                Click="Next"
                 Cursor="Hand"
-                IsEnabled="False"
+                Name="ContinueButton"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 HorizontalAlignment="Center"
                 ClipToBounds="True"
                 IsDefault="True"
-                Click="Next"
-                Width="180">
-    
-                <Grid>
-                    <Border
-                        Background="White"
-                        Height="1.4"
-                        Opacity="0.1"
-                        CornerRadius="16 16 0 0"
-                        Margin="0 -5 0 0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Stretch"/>
-
-                    <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock Margin="0 1 0 0" Text="Next" FontSize="16" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Grid>
+                Width="200">
+                
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <TextBlock Margin="0 1 0 0" Text="Next" FontSize="25" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
         </StackPanel>
     </Grid>

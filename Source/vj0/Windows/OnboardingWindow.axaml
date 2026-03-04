@@ -15,8 +15,8 @@
     Title="Welcome"
     Background="{DynamicResource BackgroundBrush}"
 
-    Width="1150" MinWidth="1000"
-    Height="660" MinHeight="660"
+    Width="1250" MinWidth="1250"
+    Height="800" MinHeight="800"
     
     mc:Ignorable="d"
     
@@ -39,54 +39,6 @@
 
             <!-- Discord Link -->
             <StackPanel Background="Transparent" Margin="0" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
-                <Button Click="OpenDiscordLink"
-                        Foreground="White"
-                        Background="Transparent"
-                        Height="33"
-                        ToolTip.Tip="Discord"
-                        Cursor="Hand"
-                        HorizontalAlignment="Center"
-                        ClipToBounds="True"
-                        BorderThickness="0"
-                        CornerRadius="5"
-                        FontSize="15"
-                        Width="40">
-        
-                    <Image Source="/Assets/Brands/Scaled/Discord.20px.png"
-                           Width="20"
-                           IsHitTestVisible="False"/>
-                </Button>
-                
-                <!-- Donate Link -->
-                <Button Cursor="Hand" Click="OpenDonateLink" ToolTip.Tip="Support Us" Height="30" Width="40" Background="#240a0f" CornerRadius="7">
-                    <Button.Resources>
-                        <ResourceDictionary>
-                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#66343d"/>
-                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#8a2b3c"/>
-                        </ResourceDictionary>
-                    </Button.Resources>
-                        
-                    <Grid>
-                        <Border
-                            Background="White"
-                            Height="0.3"
-                            Opacity="0.03"
-                            Width="29"
-                            CornerRadius="16 16 0 0"
-                            Margin="0 -4.5 0 0"
-                            VerticalAlignment="Top"
-                            HorizontalAlignment="Stretch"/>
-                            
-                        <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
-                            <Viewbox Width="18" Height="18" Stretch="Uniform">
-                                <Path
-                                    Fill="#ff1c68"
-                                    Data="M20.84,4.61 C18.99,2.76 16.01,2.76 14.16,4.61 L12,6.77 L9.84,4.61 C7.99,2.76 5.01,2.76 3.16,4.61 C1.31,6.46 1.31,9.44 3.16,11.29 L12,20.13 L20.84,11.29 C22.69,9.44 22.69,6.46 20.84,4.61 Z"/>
-                            </Viewbox>
-                        </StackPanel>
-                    </Grid>
-                </Button>
-                
                 <CaptionButtons Margin="4 0 0 0" x:Name="captionButtons" Background="Transparent"/>
             </StackPanel>
         </Grid>

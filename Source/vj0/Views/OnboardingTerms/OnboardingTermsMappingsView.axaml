@@ -14,7 +14,7 @@
     <Border Background="{DynamicResource GuideBackgroundBrush}"
             CornerRadius="12" 
             BorderBrush="#333333"
-            BorderThickness="1 0 0 0"
+            BorderThickness="1"
             Margin="20 0"
             VerticalAlignment="Top"
             Padding="40">

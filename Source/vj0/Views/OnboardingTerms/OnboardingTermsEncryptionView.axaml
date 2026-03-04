@@ -15,7 +15,7 @@
             CornerRadius="12" 
             BorderBrush="#333333"
             VerticalAlignment="Top"
-            BorderThickness="1 0 0 0"
+            BorderThickness="1"
             Margin="20 0"
             Padding="40">
         <StackPanel Spacing="10">

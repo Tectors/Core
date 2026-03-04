@@ -14,7 +14,7 @@
     <Border Background="{DynamicResource GuideBackgroundBrush}"
             CornerRadius="12" 
             BorderBrush="#333333"
-            BorderThickness="1 0 0 0"
+            BorderThickness="1"
             VerticalAlignment="Top"
             Margin="20 0"
             Padding="40">
@@ -25,7 +25,7 @@
                 What is a Profile?
                 
                 <fluent:FluentIcon
-                    Icon="Agents"
+                    Icon="Person"
                     Margin="5 0 0 0"
                     IconSize="Size32"
                     IconVariant="Regular"/>

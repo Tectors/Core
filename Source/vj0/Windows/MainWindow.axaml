@@ -107,7 +107,7 @@
                         </controls:NavigationViewItem.InfoBadge>
                         
                         <Grid>
-                            <fluent:SymbolIcon Width="20" Symbol="Agents"/>
+                            <fluent:SymbolIcon Width="20" Symbol="Person"/>
                         </Grid>
                     </controls:NavigationViewItem>
                     

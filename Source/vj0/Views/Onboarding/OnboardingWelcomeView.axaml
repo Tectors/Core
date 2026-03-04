@@ -13,41 +13,39 @@
     
     <Grid>
         <StackPanel VerticalAlignment="Center" Spacing="15">
-            <Image Source="/Assets/Icon/App.Icon.png"
-                   Width="200"
-                   IsHitTestVisible="False" Margin="0 0 0 0"/>
+            <Grid>
+                <Image Source="/Assets/Icon/App.Icon.png"
+                       Width="250"
+                       IsHitTestVisible="False" Margin="0 0 0 50"/>
+                <Image Source="/Assets/Icon/App.Icon.png" Name="Logo"
+                       Width="250" PointerEntered="InputElement_OnPointerEntered"
+                       Margin="0 -20 0 50" Opacity="0.0">
+                    <Image.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Grid>
             
-            <TextBlock LineSpacing="0" LetterSpacing="-1" HorizontalAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="#f5f5f5">
-                Welcome to the 
-                <TextBlock FontSize="32" Margin="3 0 0 -3.5" Text="{x:Static vj0.Core:Globals.APP_NAME}"/>
+            <TextBlock LineSpacing="0" LetterSpacing="-1" HorizontalAlignment="Center" FontSize="45" Foreground="#f5f5f5">
+                Welcome
             </TextBlock>
-            <TextBlock HorizontalAlignment="Center" FontSize="20" Opacity="0.35">Created by Tector</TextBlock>
 
             <Button
-                Classes="BlueShine"
-                Height="40"
-                Margin="0 25 0 0"
+                Classes="ContentSecondary HoverLift"
+                Height="50"
+                Margin="0 50 0 0"
                 Click="OnStartClicked"
                 Cursor="Hand"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 HorizontalAlignment="Center"
                 ClipToBounds="True"
                 IsDefault="True"
                 Width="150">
                 
-                <Grid>
-                    <Border
-                        Background="White"
-                        Height="1.4"
-                        Opacity="0.1"
-                        CornerRadius="16 16 0 0"
-                        Margin="0 -5 0 0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Stretch"/>
-
-                    <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock Margin="0 1 0 0" Text="Next" FontSize="16" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Grid>
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <TextBlock Margin="0 1 0 0" Text="Get Started" FontSize="20" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
         </StackPanel>
     </Grid>

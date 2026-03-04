@@ -62,7 +62,7 @@
                                  Tag="{x:Type profileEditor:GeneralDetailsProfileEditor}">
                             <controls:NavigationViewItem.IconSource>
                                 <fluent:FluentIconSource
-                                    Icon="Agents"
+                                    Icon="Person"
                                     IconSize="Size48"
                                     IconVariant="Regular"/>
                             </controls:NavigationViewItem.IconSource>

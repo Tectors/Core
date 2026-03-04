@@ -24,33 +24,25 @@
                 Adjust Your Preferences
             </TextBlock>
         
-            <views:SettingsView Width="1000" Height="450" IsOnboarding="True"/>
-        
-            <Button Classes="BlueShine"
-                x:Name="ContinueButton"
-                Height="40"
+            <views:SettingsView Width="1100" Height="500" IsOnboarding="True"/>
+            
+            <Button
+                Classes="ContentSecondary HoverLift"
+                Height="60"
+                Name="ContinueButton"
+                Margin="0 50 0 0"
+                Click="Save"
                 Cursor="Hand"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 HorizontalAlignment="Center"
                 ClipToBounds="True"
                 IsDefault="True"
-                IsEnabled="False"
-                Click="Save"
-                Width="180">
-    
-                <Grid>
-                    <Border
-                        Background="White"
-                        Height="1.4"
-                        Opacity="0.1"
-                        CornerRadius="16 16 0 0"
-                        Margin="0 -5 0 0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Stretch"/>
-
-                    <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock Margin="0 1 0 0" Text="Complete Setup" FontSize="16" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Grid>
+                Width="200">
+                
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <TextBlock Margin="0 1 0 0" Text="Save" FontSize="25" HorizontalAlignment="Center"/>
+                </StackPanel>
             </Button>
         </StackPanel>
     </Grid>

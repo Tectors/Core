@@ -38,7 +38,7 @@
                     Description="Automatically launches the last used profile on startup.">
                     
                     <controls:SettingsExpander.IconSource>
-                        <fluent:FluentIconSource Icon="Agents" />
+                        <fluent:FluentIconSource Icon="Person" />
                     </controls:SettingsExpander.IconSource>
                     
                     <controls:SettingsExpander.Footer>
