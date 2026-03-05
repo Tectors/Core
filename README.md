@@ -10,12 +10,12 @@
 
 [![Discord](https://img.shields.io/badge/Join%20Discord-Collector?color=0363ff&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/eV9DF6sBsz)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Ko--fi?color=29abe0&logo=ko-fi&logoColor=white&style=for-the-badge)](https://ko-fi.com/t4ctor)
-[![Releases](https://img.shields.io/github/downloads/Tectors/j0.dev/total?style=for-the-badge&color=00ffa2&label=Downloads)](https://github.com/Tectors/j0.dev/releases)
+[![Releases](https://img.shields.io/github/downloads/Tectors/Core/total?style=for-the-badge&color=00ffa2&label=Downloads)](https://github.com/Tectors/Core/releases)
 
 </div>
 
 # 📖 About
-**`j0.dev`** aims to elevate the workflow for **JsonAsAsset**, making it easier to set up builds and port assets.
+**`Core`** aims to elevate the workflow for **JsonAsAsset**, making it easier to set up builds and port assets.
 
 *At the moment it is being used purely to host an API*, but our future goals are to expand this application into a full fledged archive explorer and implementations for JsonAsAsset. (like right clicking a folder to bulk import through JsonAsAsset)
 
@@ -33,7 +33,7 @@
 
 This project is licensed under the [Apache 2.0 License](./Licensing/Apache-2.0.txt).
 
-**`j0.dev`** makes use of open-source libraries created by many talented developers.
+**`Core`** makes use of open-source libraries created by many talented developers.
 For detailed license information and third-party attributions, please refer to:
 
 * The [Licensing directory](./Licensing)
@@ -43,7 +43,7 @@ To simplify distribution, all license texts have been consolidated into a single
 
 ### Clone
 ```
-git clone https://github.com/Tectors/j0.dev --recursive
+git clone https://github.com/Tectors/Core --recursive
 ```
 
 ## Build
