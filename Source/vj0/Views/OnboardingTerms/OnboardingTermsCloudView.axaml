@@ -19,17 +19,19 @@
             Margin="20 0"
             Padding="40">
         <StackPanel Spacing="10">
-            <TextBlock FontSize="26" LetterSpacing="-1"
-                       FontWeight="SemiBold"
-                       Foreground="{DynamicResource TextFillPrimaryBrush}">
-                What is the Cloud?
+            <StackPanel Orientation="Horizontal" Spacing="5">
+                <TextBlock FontSize="26"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource TextFillPrimaryBrush}">
+                    What is the Cloud?
+                </TextBlock>
                 
                 <fluent:FluentIcon
                     Icon="Cloud"
                     IconSize="Size32"
                     Margin="5 0 0 0"
                     IconVariant="Regular"/>
-            </TextBlock>
+            </StackPanel>
 
             <TextBlock FontSize="19" 
                        TextWrapping="Wrap">
