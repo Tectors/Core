@@ -9,6 +9,26 @@
       </StackPanel>
     </Border>
   </Design.PreviewWith>
+  
+  <ControlTheme x:Key="{x:Type ComboBox}" TargetType="Button">
+    <Style Selector="^.HoverLift">
+      <Setter Property="RenderTransform" Value="translate(0px, 0px)" />
+      <Setter Property="Transitions">
+        <Transitions>
+          <TransformOperationsTransition Property="RenderTransform"
+                                         Duration="0:0:.25"
+                                         Easing="CircularEaseOut" />
+        </Transitions>
+      </Setter>
+
+      <Style Selector="^:pointerover">
+        <Setter Property="RenderTransform" Value="translate(0px, -2px)" />
+      </Style>
+      <Style Selector="^:pressed">
+        <Setter Property="RenderTransform" Value="translate(0px, 1px)" />
+      </Style>
+    </Style>
+  </ControlTheme>
 
   <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
     <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />

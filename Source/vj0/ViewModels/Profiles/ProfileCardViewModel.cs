@@ -101,7 +101,7 @@ public partial class ProfileCardViewModel : ProfileViewModelBase
     private void StartHoverAnimation()
     {
         hoverTimer?.Stop();
-        hoverTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
+        hoverTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(10) };
         hoverTimer.Tick += (_, _) =>
         {
             var isComplete = true;

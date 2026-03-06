@@ -14,7 +14,7 @@
     
     mc:Ignorable="d"
     d:DesignWidth="500"
-    d:DesignHeight="200">
+    d:DesignHeight="1000">
     
     <Grid Classes="SettingsWrapper">
         <TextBlock Classes="SettingsHeader">Preferences</TextBlock>
@@ -24,17 +24,19 @@
                 <TextBlock Classes="SettingsCategory" Text="Convenience"/>
                 
                 <controls:SettingsExpander
-                    Header="Auto-Load Last Profile"
+                    Header="Load Profile"
                     Description="Automatically launches the last used profile on startup.">
                     
                     <controls:SettingsExpander.IconSource>
-                        <fluent:FluentIconSource Icon="Person" />
+                        <fluent:FluentIconSource Icon="PersonSync" />
                     </controls:SettingsExpander.IconSource>
                     
                     <controls:SettingsExpander.Footer>
                         <ToggleSwitch IsChecked="{Binding LoadRecentProfileOnLaunch}" Cursor="Hand"/>
                     </controls:SettingsExpander.Footer>
                 </controls:SettingsExpander>
+                
+                <TextBlock Classes="SettingsCategory" Text="Window"/>
                 
                 <controls:SettingsExpander Header="Remember Window Size" Description="Keeps track of the window size and restores it on next launch.">
                     <controls:SettingsExpander.IconSource>
@@ -46,8 +48,6 @@
                     </controls:SettingsExpander.Footer>
                 </controls:SettingsExpander>
                 
-                <TextBlock Classes="SettingsCategory" Text="General"/>
-                
                 <controls:SettingsExpander Header="Tab Transitions" Description="Enable or disable the animation shown when switching between tabs.">
                     <controls:SettingsExpander.IconSource>
                         <fluent:FluentIconSource Icon="SlideTransition" />
@@ -57,6 +57,8 @@
                         <ToggleSwitch IsChecked="{Binding UseTabTransitions}" Cursor="Hand"/>
                     </controls:SettingsExpander.Footer>
                 </controls:SettingsExpander>
+                
+                <TextBlock Classes="SettingsCategory" Text="General"/>
                 
                 <controls:SettingsExpander Header="Game Language" Description="The language used for in-game text and menus.">
                     <controls:SettingsExpander.IconSource>

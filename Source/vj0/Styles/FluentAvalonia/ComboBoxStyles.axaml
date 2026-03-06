@@ -6,8 +6,8 @@
     <Design.PreviewWith>
         <Border Padding="50">
             <StackPanel Spacing="5">
-                <ComboBox>
-                    <ComboBoxItem Content="aaaaaaaaa" />
+                <ComboBox Classes="HoverLift">
+                    <ComboBoxItem Classes="HoverLift" Content="aaaaaaaaa" />
                 </ComboBox>
                 <ComboBox PlaceholderText="Placeholder">
                     <ComboBoxItem Content="Item1" />

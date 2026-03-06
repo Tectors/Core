@@ -39,7 +39,7 @@
           VerticalAlignment="Center"/>
       </Border>
       
-      <Grid IsVisible="{Binding !IgnoreLoading, RelativeSource={RelativeSource AncestorType=profiles:ProfileSplashControl}}">
+      <Grid Opacity="0.2" IsVisible="{Binding !IgnoreLoading, RelativeSource={RelativeSource AncestorType=profiles:ProfileSplashControl}}">
         <controls:ProgressRing IsVisible="{Binding IsNotInitializedAndIsActive}" Foreground="White" Width="{Binding SplashScale, RelativeSource={RelativeSource AncestorType=profiles:ProfileSplashControl}, Converter={StaticResource MultiplyConverter}, ConverterParameter=28}" Height="{Binding SplashScale, RelativeSource={RelativeSource AncestorType=profiles:ProfileSplashControl}, Converter={StaticResource MultiplyConverter}, ConverterParameter=28}"/>
       </Grid>
     </Grid>
