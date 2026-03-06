@@ -87,7 +87,6 @@
                                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{x:Static vj0.Core:Globals.VERSION}"/>
                                     <TextBlock IsVisible="{x:Static vj0.Core:Globals.IS_COMMIT_AVAILABLE}" FontSize="12" Opacity="0.5" Text="{x:Static vj0.Core:Globals.COMMIT}"/>
-                                    <TextBlock IsVisible="{x:Static vj0.Core:Globals.IS_COMMIT_UNAVAILABLE}" FontSize="12" Opacity="0.5" Text="unknown commit"/>
                                 </StackPanel>
                             </StackPanel>
                             

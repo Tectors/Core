@@ -69,7 +69,7 @@ public partial class HomeView : ViewBase<HomeViewModel>
 
         const double startScale = 1.0;
         const double endScale = 10.0;
-        const double durationMs = 800;
+        const double durationMs = 400;
         const int stepMs = 6;
         
         HeartScale.Opacity = 1.0;

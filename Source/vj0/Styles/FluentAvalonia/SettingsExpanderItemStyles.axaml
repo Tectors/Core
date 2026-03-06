@@ -34,7 +34,6 @@
     <ControlTheme x:Key="{x:Type ui:SettingsExpanderItem}" TargetType="ui:SettingsExpanderItem">
         <Setter Property="Background" Value="{DynamicResource ExpanderHeaderBackground}" />
         <Setter Property="Padding" Value="{DynamicResource SettingsExpanderItemPadding}" />
-        <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="MinHeight" Value="{DynamicResource SettingsExpanderItemMinHeight}" />
         <Setter Property="BackgroundSizing" Value="InnerBorderEdge" />
         <Setter Property="Template">

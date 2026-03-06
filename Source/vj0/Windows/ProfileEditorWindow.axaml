@@ -97,7 +97,7 @@
                 
                 <window:BaseTitleBar VerticalAlignment="Top" ShowIcon="{Binding Profile.IsNameEmpty}" Height="{DynamicResource TitleBarHeight}" Margin="{DynamicResource TitleBarNegativeTopMargin}">
                     <window:BaseTitleBar.LeftItems>
-                        <profiles:ProfileSplashControl Margin="14 0 0 0" SplashScale="1.15" IsHitTestVisible="False" IsVisible="{Binding !IsNameEmpty}" Radius="14" DataContext="{Binding Profile}"/>
+                        <profiles:ProfileSplashControl Margin="23 0 0 0" SplashScale="1.15" IsHitTestVisible="False" IsVisible="{Binding !IsNameEmpty}" Radius="14" DataContext="{Binding Profile}"/>
                         
                         <Border IsHitTestVisible="False" MaxWidth="300" HorizontalAlignment="Center">
                             <TextBlock Text="{Binding TitleBarText}"

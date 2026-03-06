@@ -54,7 +54,6 @@
                             <TextBlock x:Name="RotatingTaglineText"
                                        Foreground="{DynamicResource AnimatingTextBrush}"
                                        FontSize="26"
-                                       FontWeight="Bold"
                                        HorizontalAlignment="Center"
                                        
                                        properties:GradientAnimationService.IsAnimated="True"
@@ -79,7 +78,7 @@
                                     </Border.Effect>
                                 </Border>
                                 
-                                <Button Click="OpenKoFi" ToolTip.Tip="Help support us, it really means a lot."
+                                <Button Click="OpenKoFi" ToolTip.Tip="Support the project and help keep development going ❤️"
                                         ClipToBounds="False"
                                         CornerRadius="15"
                                         Cursor="Hand" HorizontalAlignment="Stretch" Padding="20 0" Height="43"
@@ -159,7 +158,7 @@
                             
                             <!-- Get Started button -->
                             <Button Click="GetStarted" CornerRadius="25"
-                                    Classes="White PressScale"
+                                    Classes="ContentPrimary PressScale HoverLift"
                                     Cursor="Hand" HorizontalAlignment="Stretch" Padding="25 0" Height="40"
                                     IsVisible="{Binding Source={x:Static framework:AppServices.MainWM}, Path=!DoesProfileExist}"
                                     HorizontalContentAlignment="Center"
@@ -193,8 +192,8 @@
             </Grid>
         </navigation:NavigationFrame>
         
-        <Border Margin="0 0 20 0" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Right" BorderThickness="1 0 0 1" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="0 0 0 25" VerticalAlignment="Top" Width="120" Height="40"/>
-        <Border Margin="0 0 0 20" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Center" BorderThickness="1 1 1 0" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="25 25 0 0" VerticalAlignment="Bottom" Width="450" Height="40"/>
+        <Border Margin="0 0 20 0" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Right" BorderThickness="1 0 0 1" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="0 0 0 30" VerticalAlignment="Top" Width="120" Height="40"/>
+        <Border Margin="0 0 0 20" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Center" BorderThickness="1 1 1 0" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="30 30 0 0" VerticalAlignment="Bottom" Width="450" Height="40"/>
         <StackPanel ClipToBounds="False" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 26">
             <StackPanel x:Name="TipContainer" Orientation="Horizontal" Spacing="5">
                 <avalonia:MaterialIcon Kind="Bulb"  Opacity="0.7"/>
