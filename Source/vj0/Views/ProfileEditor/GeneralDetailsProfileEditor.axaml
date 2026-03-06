@@ -63,7 +63,7 @@
                                   VerticalContentAlignment="Center">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock LineSpacing="-4.4" Margin="0 0 0 0" Text="{Binding Converter={x:Static enum:EnumToStringConverter.Instance}}"/>
+                                    <TextBlock Text="{Binding Converter={x:Static enum:EnumToStringConverter.Instance}}"/>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
