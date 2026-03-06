@@ -29,7 +29,7 @@
                 
                 Title Bar Gradient
                 -->
-                <Grid Opacity="0.25" Name="TitleBarGradient" IsVisible="True">
+                <Grid Opacity="0.5" Name="TitleBarGradient" IsVisible="True">
                     <Border Margin="10 0 10 0" Opacity="{Binding TitleBarOpacity}" Background="{Binding TitleBarSecondGradientBrush}" HorizontalAlignment="Stretch" Height="25">
                         <Border.Effect>
                             <BlurEffect Radius="75"/>
@@ -160,7 +160,7 @@
                     <Button.Flyout>
                         <Flyout>
                             <StackPanel Width="200" Spacing="8">
-                                <Button Click="RestartAPI" Cursor="Hand" HorizontalAlignment="Stretch" Padding="10 0" Height="40" Background="Transparent" CornerRadius="8" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                                <Button Classes="SoftHoverLift" Click="RestartAPI" Cursor="Hand" HorizontalAlignment="Stretch" Padding="10 0" Height="40" Background="Transparent" CornerRadius="8" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
                                     <Button.Resources>
                                         <ResourceDictionary>
                                             <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#10FFFFFF"/>

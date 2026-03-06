@@ -13,6 +13,7 @@
     x:DataType="viewModels:HomeViewModel"
     mc:Ignorable="d"
     d:DesignWidth="1500"
+    AttachedToVisualTree="Visual_OnAttachedToVisualTree"
     d:DesignHeight="800">
     
     <UserControl.Resources>
@@ -164,10 +165,10 @@
                                     HorizontalContentAlignment="Center"
                                     BorderBrush="#232323"
                                     VerticalContentAlignment="Center">
-                                <StackPanel Orientation="Horizontal" Spacing="14">
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <avalonia:MaterialIcon Width="8" Kind="NavigateNext" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
                                     <TextBlock FontWeight="Bold" FontSize="19">Get Started</TextBlock>
-                                    
-                                    <avalonia:MaterialIcon Width="10" Kind="NavigateNext" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             
@@ -180,8 +181,7 @@
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center">
                                     <StackPanel Orientation="Horizontal" Spacing="14">
-                                        <avalonia:MaterialIcon Width="19" Kind="Folder"
-                                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <avalonia:MaterialIcon Width="19" Kind="Folder" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                         <TextBlock FontWeight="Bold" FontSize="19">Explore Files</TextBlock>
                                     </StackPanel>
                                 </Button>
@@ -195,7 +195,7 @@
         <Border Margin="0 0 20 0" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Right" BorderThickness="1 0 0 1" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="0 0 0 30" VerticalAlignment="Top" Width="120" Height="40"/>
         <Border Margin="0 0 0 20" Background="{DynamicResource BackgroundBrush}" HorizontalAlignment="Center" BorderThickness="1 1 1 0" BorderBrush="{DynamicResource BorderBrush}" CornerRadius="30 30 0 0" VerticalAlignment="Bottom" Width="450" Height="40"/>
         <StackPanel ClipToBounds="False" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 26">
-            <StackPanel x:Name="TipContainer" Orientation="Horizontal" Spacing="5">
+            <StackPanel x:Name="TipContainer" Orientation="Horizontal" Spacing="10">
                 <avalonia:MaterialIcon Kind="Bulb"  Opacity="0.7"/>
                 <TextBlock x:Name="TipText" Text="" HorizontalAlignment="Center" Opacity="0.8"/>
             </StackPanel>

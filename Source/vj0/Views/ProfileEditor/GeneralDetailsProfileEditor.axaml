@@ -19,15 +19,16 @@
 
     <navigation:NavigationUnboundFrame>
         <StackPanel Margin="0" Orientation="Vertical" VerticalAlignment="Stretch">
-            <StackPanel Margin="35" Spacing="22">
-                <!-- Profile Name + Game Engine -->
+            <StackPanel Margin="35" Spacing="30">
+                <!-- Name + Game Engine -->
                 <Grid ColumnDefinitions="*,*" ColumnSpacing="20" Opacity="{Binding AutoDetectedGameToOpacity}" IsHitTestVisible="{Binding !Profile.IsAutoDetected}">
                     <StackPanel Orientation="Vertical" Spacing="15" Grid.Column="0">
                         <StackPanel Orientation="Horizontal" Spacing="5">
-                            <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
-                                Profile Name
+                            <fluent:FluentIcon Icon="Person" FontSize="17"/>
+
+                            <TextBlock FontSize="16" VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
+                                Name
                             </TextBlock>
-                            <fluent:FluentIcon Icon="Rename" FontSize="15"/>
                         </StackPanel>
 
                         <TextBox
@@ -43,10 +44,11 @@
 
                     <StackPanel Orientation="Vertical" Spacing="15" Grid.Column="1">
                         <StackPanel Orientation="Horizontal" Spacing="5">
-                            <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
-                                Game Engine
+                            <fluent:FluentIcon Icon="DeveloperBoard" FontSize="17"/>
+
+                            <TextBlock FontSize="16" VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
+                                Engine
                             </TextBlock>
-                            <fluent:FluentIcon Icon="XboxController" FontSize="15"/>
                         </StackPanel>
                         
                         <ComboBox FontFamily="Consolas"
@@ -71,11 +73,11 @@
                 <!-- Directory -->
                 <StackPanel Orientation="Vertical" Spacing="15" Opacity="{Binding AutoDetectedGameToOpacity}" IsHitTestVisible="{Binding !Profile.IsAutoDetected}">
                     <StackPanel Orientation="Horizontal" Spacing="5">
-                        <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
+                        <fluent:FluentIcon Icon="Folder" FontSize="17"/>
+
+                        <TextBlock FontSize="16" VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
                             Directory
                         </TextBlock>
-                        
-                        <fluent:FluentIcon Icon="Folder" FontSize="15"/>
                     </StackPanel>
 
                     <Grid ColumnDefinitions="*,Auto">
@@ -91,11 +93,11 @@
                 <!-- AES Key -->
                 <StackPanel Orientation="Vertical" Spacing="15" Opacity="{Binding AutoDetectedGameToOpacity}" IsHitTestVisible="{Binding !Profile.IsAutoDetected}">
                     <StackPanel Orientation="Horizontal" Spacing="5">
-                        <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
+                        <fluent:FluentIcon Icon="Key" FontSize="17"/>
+
+                        <TextBlock FontSize="16" VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
                             AES Key
                         </TextBlock>
-                        
-                        <fluent:FluentIcon Icon="Key" FontSize="15"/>
                     </StackPanel>
 
                     <TextBox FontFamily="Consolas"

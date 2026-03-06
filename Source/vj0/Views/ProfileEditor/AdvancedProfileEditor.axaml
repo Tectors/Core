@@ -9,6 +9,7 @@
     xmlns:avalonia="clr-namespace:FluentIcons.Avalonia;assembly=FluentIcons.Avalonia"
     xmlns:profileEditor="clr-namespace:vj0.ViewModels.ProfileEditor"
     xmlns:navigation="clr-namespace:vj0.Controls.Navigation"
+    xmlns:fluent="clr-namespace:FluentIcons.Avalonia.Fluent;assembly=FluentIcons.Avalonia.Fluent"
 
     x:Class="vj0.Views.ProfileEditor.AdvancedProfileEditor"
     x:DataType="profileEditor:ProfileEditorViewModel"
@@ -29,7 +30,7 @@
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="10">
                                     <StackPanel>
-                                        <avalonia:FluentIcon HorizontalAlignment="Left" Opacity="0.8" Icon="Database" FontSize="15"/>
+                                        <avalonia:FluentIcon HorizontalAlignment="Left" Opacity="0.8" Icon="Database" FontSize="25"/>
                                     </StackPanel>
                             
                                     <StackPanel Orientation="Vertical" Spacing="3">
@@ -66,9 +67,13 @@
                 <StackPanel Opacity="{Binding AutoDetectedGameToOpacity}"
                             IsHitTestVisible="{Binding !Profile.IsAutoDetected}"
                             Orientation="Vertical" Spacing="15">
-                    <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
-                        Texture Platform
-                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <fluent:FluentIcon Icon="CircleShadow" FontSize="17"/>
+
+                        <TextBlock VerticalAlignment="Center" FontSize="16" TextWrapping="NoWrap" Padding="0" Margin="0">
+                            Texture Platform
+                        </TextBlock>
+                    </StackPanel>
 
                     <ComboBox HorizontalAlignment="Stretch" Cursor="Hand" ItemsSource="{extensions:EnumToItemsSource {x:Type texture:ETexturePlatform}}" SelectedItem="{Binding Profile.TexturePlatform, Converter={StaticResource EnumToRecord}}"/>
                 </StackPanel>
@@ -76,10 +81,14 @@
                 <StackPanel Opacity="{Binding AutoDetectedGameToOpacity}"
                             IsHitTestVisible="{Binding !Profile.IsAutoDetected}"
                             Orientation="Vertical" Spacing="15">
-                    <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap" Padding="0" Margin="0">
-                        Audio Format
-                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <fluent:FluentIcon Icon="SoundWaveCircle" FontSize="17"/>
 
+                        <TextBlock VerticalAlignment="Center" FontSize="16" TextWrapping="NoWrap" Padding="0" Margin="0">
+                            Audio Format
+                        </TextBlock>
+                    </StackPanel>
+                    
                     <ComboBox HorizontalAlignment="Stretch" Cursor="Hand" ItemsSource="{extensions:EnumToItemsSource {x:Type base:EAudioFormatType}}" SelectedItem="{Binding Profile.AudioFormat, Converter={StaticResource EnumToRecord}}"/>
                 </StackPanel>
             </StackPanel>

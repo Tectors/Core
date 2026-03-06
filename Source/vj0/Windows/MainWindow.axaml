@@ -19,7 +19,7 @@
     
     Title="{Binding Title}"
 
-    Width="1435" Height="878"
+    Width="1439" Height="878"
     MinWidth="945" MinHeight="680"
     
     mc:Ignorable="d"
@@ -100,10 +100,10 @@
                 </controls:NavigationView.MenuItems>
 
                 <controls:NavigationView.FooterMenuItems>
-                    <!-- Profile -->
-                    <controls:NavigationViewItem Focusable="False" ToolTip.Tip="Profile" Tag="{x:Type profiles:ProfileSelectionView}">
+                    <!-- Profiles -->
+                    <controls:NavigationViewItem Focusable="False" ToolTip.Tip="Profiles" Tag="{x:Type profiles:ProfileSelectionView}">
                         <controls:NavigationViewItem.InfoBadge>
-                            <controls:InfoBadge Background="{DynamicResource Accent}" Margin="0 5 -8 0" Height="6" Width="6" Padding="0 0 0 0" IsVisible="{Binding !DoesProfileExist}" />
+                            <controls:InfoBadge Background="{DynamicResource Accent}" Margin="0 5 4 0" Height="6" Width="6" Padding="0 0 0 0" IsVisible="{Binding !DoesProfileExist}" />
                         </controls:NavigationViewItem.InfoBadge>
                         
                         <fluent:SymbolIcon Width="20" Symbol="Person"/>

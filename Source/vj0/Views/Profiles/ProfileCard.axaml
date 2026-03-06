@@ -77,7 +77,7 @@
                     HorizontalAlignment="Left">
                   </TextBlock>
                   
-                  <Border IsVisible="{Binding Profile.IsAutoDetected}" ToolTip.Tip="Auto-detected" Padding="4" Width="24" Height="24" Background="#0095ff" HorizontalAlignment="Right" CornerRadius="4">
+                  <Border IsVisible="{Binding Profile.IsAutoDetected}" ToolTip.Tip="Auto-detected" Padding="4" Width="24" Height="24" Background="#0095ff" HorizontalAlignment="Right" CornerRadius="8">
                     <avalonia:FluentIcon
                       Icon="Communication"
                       HorizontalAlignment="Center"
@@ -113,6 +113,7 @@
             </StackPanel>
 
             <Button
+              Classes="HoverLift"
               HorizontalAlignment="Right"
               VerticalAlignment="Top"
               x:Name="MoreOptionsButton"
@@ -126,7 +127,7 @@
               <Button.Flyout>
                 <Flyout>
                     <StackPanel Width="150" Spacing="2">
-                        <Button Click="EditButton_Click" Cursor="Hand" HorizontalAlignment="Stretch" Padding="10 0" Height="40" Background="Transparent" CornerRadius="7" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                        <Button Classes="SoftHoverLift" Click="EditButton_Click" Cursor="Hand" HorizontalAlignment="Stretch" Padding="10 0" Height="40" Background="Transparent" CornerRadius="7" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Spacing="12">
                                 <controls:SymbolIcon
                                   Height="18"
@@ -142,7 +143,7 @@
                         </Button>
                       
                         <StackPanel HorizontalAlignment="Stretch" IsVisible="{Binding !Profile.IsAutoDetected}" Orientation="Vertical">
-                          <Button HorizontalAlignment="Stretch"
+                          <Button Classes="SoftHoverLift" HorizontalAlignment="Stretch"
                                   Padding="10 0"
                                   Height="40"
                                   CornerRadius="7"

@@ -130,6 +130,7 @@
                         <Button IsVisible="{Binding HasArchiveResolver}"
                                 Height="35"
                                 Width="45"
+                                Margin="5 0"
                                 Padding="10 0"
                                 Classes="Glass SoftGlass HoverLift"
                                 HorizontalAlignment="Right"
@@ -142,6 +143,7 @@
                         
                         <Button Width="45"
                                 Height="35"
+                                Margin="5 0"
                                 CornerRadius="10"
                                 Padding="10 0"
                                 Classes="Glass SoftGlass HoverLift"
@@ -176,52 +178,14 @@
                                 Spacing="10"
                                 VerticalAlignment="Bottom">
 
-                        <!-- Save -->
-                        <Button Cursor="Hand"
-                                IsEnabled="{Binding !Profile.HasValidationErrors}"
-                                IsHitTestVisible="{Binding !Profile.HasValidationErrors}"
-                                Classes="BlueShine HoverLift"
-                                Click="Save"
-                                Height="33"
-                                FontSize="15"
-                                Padding="10 0"
-                                FontWeight="Bold"
-                                CornerRadius="10">
-                                                        
-                            <ToolTip.Tip>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SaveChangesText}"/>
-                                    <controls1:KeybindDisplay Keybind="Ctrl+S" />
-                                </StackPanel>
-                            </ToolTip.Tip>
-                            
-                            <Grid>
-                                <Border
-                                    Background="White"
-                                    Height="1.4"
-                                    Opacity="0.1"
-                                    CornerRadius="16 16 0 0"
-                                    Margin="0 0 0 0"
-                                    IsVisible="{Binding !Profile.HasValidationErrors}"
-                                    VerticalAlignment="Top"
-                                    HorizontalAlignment="Stretch"/>
-
-                                <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <avalonia:FluentIcon HorizontalAlignment="Center" VerticalAlignment="Center" Icon="Checkmark" IsVisible="{Binding !Profile.HasValidationErrors}"></avalonia:FluentIcon>
-                                    
-                                    <TextBlock Margin="0 1 0 0" Text="{Binding SaveChangesText}" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                            </Grid>
-                        </Button>
-
                         <!-- Close Window -->
                         <Button Cursor="Hand"
                                 Click="CloseWindow"
-                                Height="33"
+                                Height="35"
                                 Classes="Glass SoftGlass HoverLift"
                                 FontSize="13"
                                 BorderThickness="1"
-                                Padding="10 0"
+                                Padding="20 0"
                                 CornerRadius="10">
                             
                             <ToolTip.Tip>
@@ -232,6 +196,30 @@
                             </ToolTip.Tip>
 
                             <TextBlock FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Cancel</TextBlock>
+                        </Button>
+                        
+                        <!-- Save -->
+                        <Button Cursor="Hand"
+                                IsEnabled="{Binding !Profile.HasValidationErrors}"
+                                IsHitTestVisible="{Binding !Profile.HasValidationErrors}"
+                                Classes="BlueShine HoverLift"
+                                Click="Save"
+                                Height="35"
+                                FontSize="15"
+                                Padding="20 0"
+                                FontWeight="Bold"
+                                CornerRadius="10">
+                                                        
+                            <ToolTip.Tip>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SaveChangesText}"/>
+                                    <controls1:KeybindDisplay Keybind="Ctrl+S" />
+                                </StackPanel>
+                            </ToolTip.Tip>
+                            
+                            <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Margin="0 1 0 0" Text="{Binding SaveChangesText}" HorizontalAlignment="Center"/>
+                            </StackPanel>
                         </Button>
                     </StackPanel>
                 </Grid>

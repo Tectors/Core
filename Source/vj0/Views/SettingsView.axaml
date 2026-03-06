@@ -140,7 +140,7 @@
                            TextWrapping="NoWrap" MaxWidth="270" Text="{Binding CurrentProfile.Name}"></TextBlock>
                 
                 <fluent:FluentIcon
-                    Icon="Person"
+                    Icon="PersonEdit"
                     HorizontalAlignment="Right"
                     IconSize="Size32"
                     Margin="0 0 25 0" FontSize="35"

@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-
+using Avalonia;
 using Avalonia.Animation.Easings;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -20,9 +20,7 @@ public partial class HomeView : ViewBase<HomeViewModel>
         InitializeComponent();
         
         ViewModel.StartRotation(ViewModel.TagLines, 2700, RotatingTaglineText, useRandom: true);
-        ViewModel.StartRotation(ViewModel.Tips, 8000, TipText, TipContainer, true);
-        
-        DispatcherTimer.RunOnce(() => PlayLogoAnimation(), TimeSpan.FromSeconds(2.4));
+        ViewModel.StartRotation(ViewModel.Tips, 2000, TipText, TipContainer, true);
     }
 
     private void OpenDiscord(object? sender, RoutedEventArgs e)
@@ -160,9 +158,19 @@ public partial class HomeView : ViewBase<HomeViewModel>
         
         IsLogoAnimationPlaying = false;
     }
+    
+    private static readonly Random _random = new();
 
     private void InputElement_OnPointerEntered(object? sender, PointerEventArgs e)
     {
-        PlayLogoAnimation();
+        if (_random.NextDouble() <= 0.1)
+        {
+            PlayLogoAnimation();
+        }
+    }
+
+    private void Visual_OnAttachedToVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
+    {
+        DispatcherTimer.RunOnce(() => PlayLogoAnimation(), TimeSpan.FromSeconds(0.1));
     }
 }
