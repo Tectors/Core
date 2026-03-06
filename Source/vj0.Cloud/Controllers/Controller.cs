@@ -252,9 +252,12 @@ public class CloudApiController : ControllerBase
                         var ownerName = wave.Owner!.Name;
                         ownerName = ownerName.SubstringBeforeWithLast('/').TrimEnd('/');
 
-                        var savePath = Path.Combine(Globals.AudioFilesFolder.FullName, ownerName.Replace("/", "\\"));
-                        var finalPath = savePath + "\\" + Path.GetFileName(path) + ".ogg";
+                        Log.Information(Globals.AudioFilesFolder.FullName);
 
+                        var cleanOwner = ownerName.TrimStart('/').Replace("/", "\\");
+                        var savePath = Path.Combine(Globals.AudioFilesFolder.FullName, cleanOwner);
+                        var finalPath = Path.Combine(savePath, Path.GetFileName(path) + ".ogg");
+                        
                         Directory.CreateDirectory(savePath);
                         System.IO.File.WriteAllBytes(finalPath, data);
 
