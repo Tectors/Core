@@ -11,7 +11,7 @@
     <Border Padding="20">
       <StackPanel Spacing="20">
         <ThemeVariantScope RequestedThemeVariant="Dark">
-          <Border Background="Black">
+          <Border Background="{DynamicResource BackgroundBrush}">
             <CaptionButtons Height="30"/>
           </Border>
         </ThemeVariantScope>
