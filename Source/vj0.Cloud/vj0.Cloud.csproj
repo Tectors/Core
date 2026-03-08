@@ -8,6 +8,7 @@
         <TargetFramework>net8.0-windows</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <SelfContained>true</SelfContained>
+        <LangVersion>preview</LangVersion>
         <SignAssembly>False</SignAssembly>
         <OutputType>WinExe</OutputType>
         <OutputType>Library</OutputType>

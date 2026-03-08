@@ -6,6 +6,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <IsPublishable>false</IsPublishable>
         <Nullable>enable</Nullable>
+        <LangVersion>preview</LangVersion>
 	</PropertyGroup>
 
     <ItemGroup>
