@@ -24,8 +24,8 @@
     <Grid>
         <Grid Background="Transparent">
             <!-- Background blur effect -->
-            <Border Width="1000" Height="100" Margin="0 0 0 0" Opacity="0.6"
-                    HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Border Height="100" Margin="200 0 200 0" Opacity="0.6"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="White" Offset="0"/>
@@ -46,7 +46,7 @@
                 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" Spacing="30" Margin="0 0 0 0">
                     <!-- App icon -->
-                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.96">
                         <Image Height="150" HorizontalAlignment="Center" PointerEntered="InputElement_OnPointerEntered" Source="/Assets/Icon/App.Icon.png" Margin="0 0 0 25"/>
                         <Image Height="150" HorizontalAlignment="Center" Opacity="0" Name="Logo" IsHitTestVisible="False" Source="/Assets/Icon/App.Icon.png" Margin="0 -70 0 0">
                             <Image.RenderTransform>
@@ -128,7 +128,7 @@
                                 </Border.Effect>
                             </Border>
                             
-                            <Button Click="OpenKoFi" ToolTip.Tip="Support the project and help keep development going ??"
+                            <Button Click="OpenKoFi" ToolTip.Tip="Support the project and help keep development going ❤️"
                                     ClipToBounds="False"
                                     CornerRadius="15"
                                     Cursor="Hand" HorizontalAlignment="Stretch" Padding="20 0" Height="43"

@@ -36,7 +36,7 @@ public class PluginService : IService
             var loadedAssemblies = AppDomain.CurrentDomain.GetAssemblies()
                 .Where(a => a.GetName().Name?.StartsWith("Core.Plugins.") == true)
                 .ToDictionary(a => a.GetName().Name!, StringComparer.OrdinalIgnoreCase);
-
+            
             foreach (var pluginFile in Directory.GetFiles(pluginsPath, "Core.Plugins.*.dll"))
             {
                 try

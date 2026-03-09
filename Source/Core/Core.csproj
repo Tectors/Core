@@ -70,7 +70,7 @@
   </ItemGroup>
 
   <ItemGroup>
-      <ProjectReference Include="..\..\Plugins\Branded\Epic Games\Core.Plugins.Fortnite\Core.Plugins.Fortnite.csproj" />
+    <ProjectReference Include="..\..\Libraries\Plugins\Core.Plugins\Core.Plugins.csproj" />
     <ProjectReference Include="..\Core.Cloud\Core.Cloud.csproj" />
     <ProjectReference Include="..\..\Libraries\Core\Core.Resources\Core.Resources.csproj"/>
     <ProjectReference Include="..\..\Libraries\API\Core.API\Core.API.csproj"/>

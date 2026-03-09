@@ -104,6 +104,12 @@ public partial class MainWindowModel : WindowModelBase
     private void SetCurrentProfile(Profile? profile)
     {
         var lastProfile = CurrentProfile;
+        
+        if (profile is not null)
+        {
+            profile.ResetEvents();
+        }
+        
         CurrentProfile = profile;
 
         if (CurrentProfile is not null)
@@ -375,7 +381,6 @@ public partial class MainWindowModel : WindowModelBase
 
         NavigateToStatus(AppStatus.Active);
         
-        CurrentProfile.ResetEvents();
         CurrentProfile.OnInitialized += OnProfileInitialized;
         CurrentProfile.OnInitializationFailure += OnProfileInitializationFailure;
 

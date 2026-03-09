@@ -21,19 +21,6 @@
     </UserControl.KeyBindings>
 
     <Grid Margin="0 0 10 0">
-        <!-- Background blur effect -->
-        <Border Width="100" Height="300" Opacity="0.15"
-                HorizontalAlignment="Right" VerticalAlignment="Center">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="White" Offset="0"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <Border.Effect>
-                <BlurEffect Radius="450"/>
-            </Border.Effect>
-        </Border>
-        
         <ScrollViewer x:Name="ProfileScrollViewer" controls:ScrollTopShadow.Enable="True" IsScrollChainingEnabled="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
             <WrapPanel ClipToBounds="False" x:Name="ProfileListPanel" LineSpacing="-20" Margin="-2 -9 5 -4" Orientation="Horizontal"/>
         </ScrollViewer>

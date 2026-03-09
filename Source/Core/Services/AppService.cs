@@ -5,6 +5,7 @@ using Avalonia.Platform.Storage;
 using FluentAvalonia.UI.Controls;
 
 using Microsoft.WindowsAPICodePack.Taskbar;
+using Serilog;
 
 using System;
 using System.Diagnostics;
@@ -16,6 +17,8 @@ using System.Threading.Tasks;
 
 using Core.Framework;
 using Core.Models;
+using Microsoft.VisualBasic.Logging;
+using Log = Serilog.Log;
 
 namespace Core.Services;
 
@@ -116,9 +119,13 @@ public class AppService : IService
         {
             return;
         }
+        
+        Log.Information($"Updating Window Jump List");
 
         var jumpList = JumpList.CreateJumpList();
-        var exePath = Path.ChangeExtension(Assembly.GetEntryAssembly()!.Location, ".exe");
+        var exePath = Environment.ProcessPath;
+        
+        Log.Information($"Entry Assembly Location: {exePath}");
         
         var recentCategory = new JumpListCustomCategory("Recent");
 

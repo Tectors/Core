@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Animation.Easings;
@@ -7,6 +8,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Threading;
 using Core.Framework.Models;
+using Core.Models.Profiles;
 using Core.Services;
 using Core.ViewModels;
 using Core.Views.Profiles;
@@ -15,6 +17,8 @@ namespace Core.Views;
 
 public partial class HomeView : ViewBase<HomeViewModel>
 {
+    private Profile? _currentProfile;
+    
     public HomeView()
     {
         InitializeComponent();
@@ -23,11 +27,28 @@ public partial class HomeView : ViewBase<HomeViewModel>
         {
             if (args.PropertyName == nameof(MainWM.CurrentProfile))
             {
-                UpdatePrompt();
+                if (_currentProfile != null)
+                {
+                    _currentProfile.OnInitialized -= Profile_PropertyChanged;
+                }
+
+                _currentProfile = MainWM.CurrentProfile;
+
+                if (_currentProfile != null)
+                {
+                    _currentProfile.OnInitialized += Profile_PropertyChanged;
+                }
+
+                Dispatcher.UIThread.Post(UpdatePrompt);
             }
         };
         
         ViewModel.StartRotation(ViewModel.TagLines, 2700, RotatingTaglineText, useRandom: true);
+    }
+    
+    private void Profile_PropertyChanged(Profile profile)
+    {
+        Dispatcher.UIThread.Post(UpdatePrompt);
     }
 
     private void OpenDiscord(object? sender, RoutedEventArgs e)
@@ -183,7 +204,14 @@ public partial class HomeView : ViewBase<HomeViewModel>
 
         if (MainWM.CurrentProfile is not null)
         {
-            Prompt.Text = "You're all set.";
+            if (MainWM.CurrentProfile.IsInitialized)
+            {
+                Prompt.Text = "You're all set.";
+            }
+            else
+            {
+                Prompt.Text = "Just a moment…";
+            }
         }
         else
         {
