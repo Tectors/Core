@@ -306,7 +306,7 @@
                   <Button
                     x:Name="EditButton"
                     Grid.Column="2"
-                    Foreground="White"
+                    Foreground="#e0e0e0"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     BorderThickness="1"

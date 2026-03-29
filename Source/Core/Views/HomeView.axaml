@@ -88,7 +88,7 @@
                         Orientation="Horizontal" Spacing="15">
                         
                         <!-- Get Started button -->
-                        <Button Click="GetStarted" CornerRadius="25"
+                        <Button Click="GetStarted" CornerRadius="5"
                                 Classes="GlassWhite PressScale HoverLift"
                                 Padding="25 15"
                                 Cursor="Hand" HorizontalAlignment="Stretch"
