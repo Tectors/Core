@@ -89,7 +89,7 @@ public sealed class FortniteOnDemandPlugin : IOnDemandPlugin, IGameIdPlugin
             await API.Globals.API.DownloadFileAsync($"https://download.epicgames.com/{tocPath}", onDemandFile.FullName);
         }
             
-        await Profile.Provider.RegisterVfsAsync(new IoChunkToc(onDemandFile.FullName));
+        await Profile.Provider.RegisterVfsAsync(new IoChunkToc(onDemandFile.FullName, Profile.Provider.Versions));
         await Profile.Provider.MountAsync();
     }
     

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -66,7 +67,7 @@ public class BaseOnDemandProvider : BaseProvider
 
                 case "uondemandtoc":
                 {
-                    var toc = new IoChunkToc(file.FullName);
+                    var toc = new IoChunkToc(file.FullName, Versions);
                     RegisterVfs(toc, OnDemandOptions);
                     break;
                 }
@@ -124,7 +125,7 @@ public class BaseOnDemandProvider : BaseProvider
                         file.GetStream().CopyTo(fs);
                     }
 
-                    var toc = new IoChunkToc(targetPath);
+                    var toc = new IoChunkToc(targetPath, Versions);
                     RegisterVfs(toc, OnDemandOptions);
                     break;
                 }
