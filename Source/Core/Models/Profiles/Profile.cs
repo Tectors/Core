@@ -25,7 +25,6 @@ using Microsoft.IdentityModel.Tokens;
 
 using Serilog;
 
-using UE4Config.Parsing;
 using Core.API.UEDB.API.Responses;
 using Core.Extensions;
 using Core.Models.Profiles.Display;
@@ -39,9 +38,6 @@ using Core.Resources.Framework.CUEParse;
 using Core.Plugins.OnDemand;
 using Core.Resources.Migration;
 using Core.Windows;
-using CUE4Parse.FileProvider;
-using CUE4Parse.UE4.IO;
-using CUE4Parse.Utils;
 
 namespace Core.Models.Profiles;
 
@@ -128,10 +124,7 @@ public class Profile : BaseProfileDisplay
         
         CheckStatusNotifies();
         
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
+        cancellationToken.ThrowIfCancellationRequested();
 
         Status.SetState(EProfileStatus.Active);
         
@@ -142,24 +135,16 @@ public class Profile : BaseProfileDisplay
 
         UpdateStatus("Loading Files");
         
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
+        cancellationToken.ThrowIfCancellationRequested();
         
         await InitializeProvider();
+        LoadMappings(cancellationToken);
         
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
+        cancellationToken.ThrowIfCancellationRequested();
         
         InitializeCache();
 
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
+        cancellationToken.ThrowIfCancellationRequested();
 
         await InitializeTextureStreaming();
         await LoadKeys(cancellationToken);
@@ -182,37 +167,17 @@ public class Profile : BaseProfileDisplay
 
         if (Provider is not null)
         {
-            Provider.LoadVirtualPaths();
+            await Task.Run(() => SetLanguage(Settings.Application.GameLanguage), cancellationToken);
+            await Task.Run(() => Provider.LoadVirtualPaths(), cancellationToken);
             
-            if (cancellationToken.IsCancellationRequested)
-            {
-                return;
-            }
-            await Provider.MountAsync();
-            
-            if (cancellationToken.IsCancellationRequested)
-            {
-                return;
-            }
-
-            SetLanguage(Settings.Application.GameLanguage);
-        }
-
-        LoadMappings(cancellationToken);
-        
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
+            cancellationToken.ThrowIfCancellationRequested();
         }
         
-        _ = ExplorerVM.FinalizeWhenProviderExplorerReady();
-
+        cancellationToken.ThrowIfCancellationRequested();
+        
         IsInitialized = true;
         
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
+        cancellationToken.ThrowIfCancellationRequested();
         
         Log.Information($"Initialized profile {Name} successfully");
         Info.Message($"Loaded profile {Name} successfully", "", InfoBarSeverity.Success, closeTime: 0.95f);
@@ -309,25 +274,28 @@ public class Profile : BaseProfileDisplay
         
         Provider.VfsMounted += (sender, _) =>
         {
+            if (!Globals.IsReadyToExplore) return;
             MainWM.UpdateLoadedFilesDisplay();
             
             if (sender is not IAesVfsReader reader) return;
-
             UpdateStatus($"Loading {reader.Name}");
         };
         Provider.VfsMounted += (sender, _) =>
         {
             if (sender is not IAesVfsReader reader) return;
+            if (!Globals.IsReadyToExplore) return;
             ScopeVM.Verify(reader);
         };
         Provider.VfsRegistered += (sender, _) =>
         {
             if (sender is not IAesVfsReader reader) return;
+            if (!Globals.IsReadyToExplore) return;
             ScopeVM.Add(reader);
         };
         Provider.VfsUnmounted += (sender, _) =>
         {
             if (sender is not IAesVfsReader reader) return;
+            if (!Globals.IsReadyToExplore) return;
             ScopeVM.Disable(reader);
         };
         
@@ -343,8 +311,6 @@ public class Profile : BaseProfileDisplay
         {
             Provider.Initialize();
         }
-
-        return;
     }
     
     private async Task LoadKeys(CancellationToken cancellationToken = default)
@@ -354,10 +320,7 @@ public class Profile : BaseProfileDisplay
             await Provider.SubmitKeyAsync(ZERO_GUID, Encryption.MainAESKey);
             Log.Information($"Submitted AES Key: {Encryption.MainAESKey}");
             
-            if (cancellationToken.IsCancellationRequested)
-            {
-                return;
-            }
+            cancellationToken.ThrowIfCancellationRequested();
             
             if (Encryption.HasKeys && Provider is not null)
             {
@@ -367,18 +330,15 @@ public class Profile : BaseProfileDisplay
                     {
                         if (Provider is null) continue;
                         
-                        if (cancellationToken.IsCancellationRequested)
-                        {
-                            return;
-                        }
+                        cancellationToken.ThrowIfCancellationRequested();
                         
                         await Provider.SubmitKeyAsync(vfs.EncryptionKeyGuid, extraKey.AESKey);
-                        
                         Log.Information($"Submitted Dynamic AES Key: {extraKey.AESKey}");
                     }
                 }
             }
             
+            cancellationToken.ThrowIfCancellationRequested();
             Provider!.PostMount();
         }
     }
@@ -397,10 +357,7 @@ public class Profile : BaseProfileDisplay
 
         if (Provider is null) return;
 
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
+        cancellationToken.ThrowIfCancellationRequested();
 
         var MappingFile = MappingsContainer.Path;
 
@@ -409,10 +366,7 @@ public class Profile : BaseProfileDisplay
             MappingFile = mapping is { LocalPath: not null } ? mapping.LocalPath : GetLocallyRecentCreatedMappings();
         }
         
-        if (cancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
+        cancellationToken.ThrowIfCancellationRequested();
 
         if (MappingFile is not null && File.Exists(MappingFile))
         {
@@ -445,10 +399,7 @@ public class Profile : BaseProfileDisplay
             var assetArchive = await file.SafeCreateReaderAsync();
             if (assetArchive is null) continue;
 
-            if (cancellationToken.IsCancellationRequested)
-            {
-                return;
-            }
+            cancellationToken.ThrowIfCancellationRequested();
 
             try
             {
@@ -587,8 +538,9 @@ public class Profile : BaseProfileDisplay
     {
         if (Provider is not null)
         {
+            Provider.UnloadNonStreamedVfs();
             Provider.Dispose();
-            
+
             Log.Information($"Disposed Provider for {Name}");
         }
         
@@ -600,6 +552,8 @@ public class Profile : BaseProfileDisplay
             Status.SetState(EProfileStatus.Idle);
             IsInitialized = false;
         }
+        
+        GC.Collect();
     }
 
     public static async Task<List<Profile>> LoadAllAsync()

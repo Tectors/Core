@@ -24,6 +24,11 @@ public sealed class FortniteOnDemandPlugin : IOnDemandPlugin, IGameIdPlugin
         return !string.IsNullOrEmpty(Profile.ArchiveDirectory) && Profile.ArchiveDirectory.Contains("Fortnite", StringComparison.OrdinalIgnoreCase) && Regex.IsMatch(Profile.Name, @"^\d+(\.\d+){0,2}$");
     }
     
+    public bool DoesInherentlyMatch(BaseProfile Profile)
+    {
+        return false;
+    }
+    
     public Task SetupProvider(BaseProfile Profile)
     {
         Profile.Provider = 
