@@ -32,7 +32,7 @@
         
         <!-- Card -->
         <Border 
-            CornerRadius="8"
+            CornerRadius="15"
             x:Name="ProfileCardBackground"
             Background="#B3131314"
             ClipToBounds="True"
@@ -310,7 +310,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     BorderThickness="1"
-                    CornerRadius="5"
+                    CornerRadius="15"
                     Cursor="Hand"
                     Height="50"
                     Classes="PressScale HoverLift"
